@@ -5,12 +5,6 @@ namespace Id3Fixer.Test
     [TestFixture]
     public class MainProgramTests
     {
-        [SetUp]
-        public void Setup()
-        {
-
-        }
-
         [Test]
         public void Positive()
         {
@@ -31,12 +25,15 @@ namespace Id3Fixer.Test
             using var mp3good = new Mp3(Path.Combine(basePath, "02-02-Дружок_good.mp3"), Mp3Permissions.Read);
             var tagsWork = mp3work.GetTag(Id3TagFamily.Version2X);
             var tagsGood = mp3good.GetTag(Id3TagFamily.Version2X);
-            Assert.That(tagsWork.Album.Value, Is.EqualTo(tagsGood.Album.Value));
-            Assert.That(tagsWork.Album.Value, Is.Not.EqualTo(badAlbum));
-            Assert.That(tagsWork.Artists.Value, Is.EqualTo(tagsGood.Artists.Value));
-            Assert.That(string.Join(' ', tagsWork.Artists.Value), Is.Not.EqualTo(badArtist));
-            Assert.That(tagsWork.Title.Value, Is.EqualTo(tagsGood.Title.Value));
-            Assert.That(tagsWork.Title.Value, Is.Not.EqualTo(badTitle));
+            Assert.Multiple(() =>
+            {
+                Assert.That(tagsWork.Album.Value, Is.EqualTo(tagsGood.Album.Value));
+                Assert.That(tagsWork.Album.Value, Is.Not.EqualTo(badAlbum));
+                Assert.That(tagsWork.Artists.Value, Is.EqualTo(tagsGood.Artists.Value));
+                Assert.That(string.Join(' ', tagsWork.Artists.Value), Is.Not.EqualTo(badArtist));
+                Assert.That(tagsWork.Title.Value, Is.EqualTo(tagsGood.Title.Value));
+                Assert.That(tagsWork.Title.Value, Is.Not.EqualTo(badTitle));
+            });
         }
     }
 }

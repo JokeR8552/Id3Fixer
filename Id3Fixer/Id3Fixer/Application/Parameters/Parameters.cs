@@ -1,14 +1,3 @@
-﻿namespace Id3Fixer.Application.Parameters
-{
-    internal class Parameters
-    {
-        public Parameters(string basePath, string playlistFileName)
-        {
-            BasePath = basePath;
-            PlaylistFileName = playlistFileName;
-        }
+﻿namespace Id3Fixer.Application.Parameters;
 
-        public string BasePath { get; }
-        public string PlaylistFileName { get; }
-    }
-}
+public record Parameters(string BasePath, string PlaylistFileName);

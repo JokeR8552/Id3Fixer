@@ -1,6 +1,6 @@
 ﻿namespace Id3Fixer.Application.Parameters;
 
-internal interface IArgumentsProvider
+public interface IArgumentsProvider
 {
     Parameters Parameters { get; }
 }

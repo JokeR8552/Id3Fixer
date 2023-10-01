@@ -1,22 +1,17 @@
 ﻿using Id3Fixer.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace Id3Fixer.Application.Parameters;
 
-namespace Id3Fixer.Application.Parameters
+public class ConsoleAppArgumentsProvider : IArgumentsProvider
 {
-    internal class ConsoleAppArgumentsProvider : IArgumentsProvider
+    public const string DefaultPath = "C:\\Users\\imukhametov\\Documents\\My\\fix\\music";
+    public const string DefaultPlaylist = "ЖИТЬ.aimppl4";
+
+    public ConsoleAppArgumentsProvider(string[] args)
     {
-        public ConsoleAppArgumentsProvider(string[] args)
-        {
-            Parameters = new Parameters(
-                 args.GetSafe(0) ?? "C:\\Users\\imukhametov\\Documents\\My\\fix\\music",
-                 args.GetSafe(1) ?? "ЖИТЬ.aimppl4");
-        }
-
-
-        public Parameters Parameters { get; }
+        Parameters = new Parameters(
+             args.GetSafe(0) ?? DefaultPath,
+             args.GetSafe(1) ?? DefaultPlaylist);
     }
+
+    public Parameters Parameters { get; }
 }

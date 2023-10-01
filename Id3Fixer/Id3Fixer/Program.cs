@@ -1,6 +1,7 @@
 ﻿using Id3;
 using Id3Fixer.Application;
 using Id3Fixer.Application.Parameters;
+using Id3Fixer.Application.SongInfoGetter;
 using Id3Fixer.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -23,6 +24,7 @@ public class FixerProgram
 
         serviceCollection.AddTransient<IApplication, FixerApplication>();
         serviceCollection.AddTransient<IArgumentsProvider, ConsoleAppArgumentsProvider>((_) => new ConsoleAppArgumentsProvider(args));
+        serviceCollection.AddTransient<ISongInfoGetter, SongInfoGetterFromPlaylist>();
 
         return serviceCollection.BuildServiceProvider();
     }
