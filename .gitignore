@@ -1,3 +1,3 @@
 /Id3Fixer/.vs
-/Id3Fixer/Id3Fixer/bin/
-/Id3Fixer/Id3Fixer/obj/
+*bin/
+*obj/
