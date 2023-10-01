@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Id3Fixer", "Id3Fixer\Id3Fixer.csproj", "{3FDBA75C-705B-424D-B302-2482652E3D05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extenal", "Extenal", "{72DF7D87-D816-4644-9E42-B570A5535050}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net", "..\..\Id3-master\src\Id3.Net\Id3.Net.csproj", "{98E38B98-FAB9-4A1D-9682-8375BF68E223}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.Files", "..\..\Id3-master\src\Id3.Net.Files\Id3.Net.Files.csproj", "{9E24A02B-5414-41EC-8871-21C781A93CC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.InfoFx", "..\..\Id3-master\src\Id3.Net.InfoFx\Id3.Net.InfoFx.csproj", "{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.Serialization", "..\..\Id3-master\src\Id3.Net.Serialization\Id3.Net.Serialization.csproj", "{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FDBA75C-705B-424D-B302-2482652E3D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDBA75C-705B-424D-B302-2482652E3D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDBA75C-705B-424D-B302-2482652E3D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDBA75C-705B-424D-B302-2482652E3D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E38B98-FAB9-4A1D-9682-8375BF68E223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E38B98-FAB9-4A1D-9682-8375BF68E223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E38B98-FAB9-4A1D-9682-8375BF68E223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E38B98-FAB9-4A1D-9682-8375BF68E223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E24A02B-5414-41EC-8871-21C781A93CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E24A02B-5414-41EC-8871-21C781A93CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E24A02B-5414-41EC-8871-21C781A93CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E24A02B-5414-41EC-8871-21C781A93CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98E38B98-FAB9-4A1D-9682-8375BF68E223} = {72DF7D87-D816-4644-9E42-B570A5535050}
+		{9E24A02B-5414-41EC-8871-21C781A93CC2} = {72DF7D87-D816-4644-9E42-B570A5535050}
+		{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150} = {72DF7D87-D816-4644-9E42-B570A5535050}
+		{9B99FAD4-F6B7-437E-8C7D-21F44B01886D} = {72DF7D87-D816-4644-9E42-B570A5535050}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E205A4A4-2C61-4E50-A29E-DCE1821EABF9}
+	EndGlobalSection
+EndGlobal

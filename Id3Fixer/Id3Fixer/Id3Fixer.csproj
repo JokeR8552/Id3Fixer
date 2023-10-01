@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net.Files\Id3.Net.Files.csproj" />
+    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net.InfoFx\Id3.Net.InfoFx.csproj" />
+    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net.Serialization\Id3.Net.Serialization.csproj" />
+    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net\Id3.Net.csproj" />
+  </ItemGroup>
+
+</Project>
