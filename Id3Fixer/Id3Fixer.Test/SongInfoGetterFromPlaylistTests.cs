@@ -1,4 +1,5 @@
-﻿using Id3Fixer.Application.Parameters;
+﻿using Id3Fixer.Application;
+using Id3Fixer.Application.Parameters;
 using Id3Fixer.Application.SongInfoGetter;
 using Moq;
 
@@ -15,30 +16,43 @@ internal class SongInfoGetterFromPlayListTests
     }
 
     [Test]
-    public void GetSongInfos_Positive()
+    public void GetSongInfos_Positive_OneRow()
     {
         argumentsProviderMock.Setup(p => p.Parameters).Returns(new Parameters("Files", "play.aimppl4"));
         var getter = new SongInfoGetterFromPlaylist(argumentsProviderMock.Object);
 
-        var infos = getter.GetSongInfos();
-        Assert.That(infos.Count, Is.EqualTo(1));
-        Assert.That(infos[0].Artist, Is.EqualTo("Жить"));
-        argumentsProviderMock.Verify(p => p.Parameters, Times.Exactly(2));
+        List<SongInfo> infos = getter.GetSongInfos();
+
+        Assert.That(infos, Has.Count.EqualTo(1));
+        Assert.Multiple(() =>
+        {
+            Assert.That(infos[0].Name, Is.EqualTo("Дружок"));
+            Assert.That(infos[0].Artist, Is.EqualTo("Жить"));
+            Assert.That(infos[0].Album, Is.EqualTo("Не Святая"));
+        });
     }
 
     [Test]
-    public void GetSongInfos_Positive2()
+    public void GetSongInfos_Positive_ThreeRows()
     {
-        argumentsProviderMock.Setup(p => p.Parameters).Returns(new Parameters("Files", "play1.aimppl4"));
+        argumentsProviderMock.Setup(p => p.Parameters).Returns(new Parameters("Files", "play_threeRows.aimppl4"));
         var getter = new SongInfoGetterFromPlaylist(argumentsProviderMock.Object);
 
-        var infos = getter.GetSongInfos();
-        Assert.That(infos.Count, Is.EqualTo(3));
-        Assert.That(infos[0].Artist, Is.EqualTo("Жить"));
-        Assert.That(infos[0].Name, Is.EqualTo("Дружок"));
-        Assert.That(infos[1].Name, Is.EqualTo("Дружок1"));
-        Assert.That(infos[2].Name, Is.EqualTo("Дружок2"));
-        argumentsProviderMock.Verify(p => p.Parameters, Times.Exactly(2));
+        List<SongInfo> infos = getter.GetSongInfos();
+
+        Assert.That(infos, Has.Count.EqualTo(3));
+        Assert.Multiple(() =>
+        {
+            Assert.That(infos[0].Artist, Is.EqualTo("Жить1"));
+            Assert.That(infos[0].Name, Is.EqualTo("Дружок1"));
+            Assert.That(infos[0].Album, Is.EqualTo("Не Святая1"));
+            Assert.That(infos[1].Artist, Is.EqualTo("Жить2"));
+            Assert.That(infos[1].Name, Is.EqualTo("Дружок2"));
+            Assert.That(infos[1].Album, Is.EqualTo("Не Святая2"));
+            Assert.That(infos[2].Artist, Is.EqualTo("Жить3"));
+            Assert.That(infos[2].Name, Is.EqualTo("Дружок3"));
+            Assert.That(infos[2].Album, Is.EqualTo("Не Святая3"));
+        });
     }
 
     [Test]
@@ -48,6 +62,5 @@ internal class SongInfoGetterFromPlayListTests
         var getter = new SongInfoGetterFromPlaylist(argumentsProviderMock.Object);
 
         Assert.Throws<FileNotFoundException>(() => getter.GetSongInfos());
-        argumentsProviderMock.Verify(p => p.Parameters, Times.Exactly(2));
     }
 }
