@@ -23,38 +23,41 @@ public class TagsFixer : ITagsFixer
                 continue;
             }
 
-            var mp3 = new Mp3(mp3Path, Mp3Permissions.ReadWrite);
-
-            Id3Tag tag2;
             try
             {
-                tag2 = mp3.GetTag(Id3TagFamily.Version2X);
+                var mp3 = new Mp3(mp3Path, Mp3Permissions.ReadWrite);
+                Id3Tag? tag2 = mp3.GetTag(Id3TagFamily.Version2X);
+                tag2 ??= GetTag2FromTag1(mp3);
+
+                tag2.Album = songInfo.Album;
+                tag2.Title = songInfo.Name;
+                var artist = new Id3.Frames.ArtistsFrame();
+                artist.Value.Add(songInfo.Artist);
+                tag2.Artists = artist;
+
+                tag2.Album.EncodingType = Id3TextEncoding.Unicode;
+                tag2.Title.EncodingType = Id3TextEncoding.Unicode;
+                tag2.Artists.EncodingType = Id3TextEncoding.Unicode;
+
+                mp3.DeleteTag(Id3TagFamily.Version1X);
+                mp3.WriteTag(tag2);
+                mp3.Dispose();
             }
-            catch
+            catch (Exception ex)
             {
-                tag2 = GetTag2FromTag1(mp3);
+                Console.WriteLine();
+                Console.WriteLine(mp3Path);
+                Console.WriteLine(ex);
+                Console.WriteLine();
+                continue;
             }
-
-            tag2.Album = songInfo.Album;
-            tag2.Title = songInfo.Name;
-            var artist = new Id3.Frames.ArtistsFrame();
-            artist.Value.Add(songInfo.Artist);
-            tag2.Artists = artist;
-
-            tag2.Album.EncodingType = Id3TextEncoding.Unicode;
-            tag2.Title.EncodingType = Id3TextEncoding.Unicode;
-            tag2.Artists.EncodingType = Id3TextEncoding.Unicode;
-
-            mp3.DeleteTag(Id3TagFamily.Version1X);
-            mp3.WriteTag(tag2);
-            mp3.Dispose();
         }
     }
 
-    private Id3Tag GetTag2FromTag1(Mp3 mp3)
+    private static Id3Tag GetTag2FromTag1(Mp3 mp3)
     {
-        //var tag1 = mp3.GetTag(Id3TagFamily.Version1X);
+        Id3Tag tag1 = mp3.GetTag(Id3TagFamily.Version1X);
 
-        throw new NotImplementedException();
+        return tag1.ConvertTo(Id3Version.V23);
     }
 }
