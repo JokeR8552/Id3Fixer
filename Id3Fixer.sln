@@ -7,19 +7,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3Fixer", "Id3Fixer\Id3Fix
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extenal", "Extenal", "{72DF7D87-D816-4644-9E42-B570A5535050}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net", "..\..\Id3-master\src\Id3.Net\Id3.Net.csproj", "{98E38B98-FAB9-4A1D-9682-8375BF68E223}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net", "..\Id3-master\src\Id3.Net\Id3.Net.csproj", "{98E38B98-FAB9-4A1D-9682-8375BF68E223}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.Files", "..\..\Id3-master\src\Id3.Net.Files\Id3.Net.Files.csproj", "{9E24A02B-5414-41EC-8871-21C781A93CC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.Files", "..\Id3-master\src\Id3.Net.Files\Id3.Net.Files.csproj", "{9E24A02B-5414-41EC-8871-21C781A93CC2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.InfoFx", "..\..\Id3-master\src\Id3.Net.InfoFx\Id3.Net.InfoFx.csproj", "{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.InfoFx", "..\Id3-master\src\Id3.Net.InfoFx\Id3.Net.InfoFx.csproj", "{0EE3C717-696D-4F6F-9A5B-BF11DCEBE150}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.Serialization", "..\..\Id3-master\src\Id3.Net.Serialization\Id3.Net.Serialization.csproj", "{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3.Net.Serialization", "..\Id3-master\src\Id3.Net.Serialization\Id3.Net.Serialization.csproj", "{9B99FAD4-F6B7-437E-8C7D-21F44B01886D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id3Fixer.Test", "Id3Fixer.Test\Id3Fixer.Test.csproj", "{DBB96E5D-CB46-46C0-95C2-3828DA30D481}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEA8A5CF-A2D0-4E2B-B917-4FF416293071}"
 	ProjectSection(SolutionItems) = preProject
-		..\.editorconfig = ..\.editorconfig
+		.editorconfig = .editorconfig
+		readmeme = readmeme
 	EndProjectSection
 EndProject
 Global

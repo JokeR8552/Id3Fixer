@@ -6,6 +6,9 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+    
+    <Authors>Ilgiz 'JokeR' Mukhametov</Authors>
+    <Copyright>Copyright © Ilgiz 'JokeR' Mukhametov 2023</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

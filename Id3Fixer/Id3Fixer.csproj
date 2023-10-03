@@ -5,6 +5,9 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <Authors>Ilgiz 'JokeR' Mukhametov</Authors>
+    <Copyright>Copyright © Ilgiz 'JokeR' Mukhametov 2023</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,10 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net.Files\Id3.Net.Files.csproj" />
-    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net.InfoFx\Id3.Net.InfoFx.csproj" />
-    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net.Serialization\Id3.Net.Serialization.csproj" />
-    <ProjectReference Include="..\..\..\Id3-master\src\Id3.Net\Id3.Net.csproj" />
+    <ProjectReference Include="..\..\Id3-master\src\Id3.Net\Id3.Net.csproj" />
   </ItemGroup>
 
 </Project>

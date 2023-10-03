@@ -1,0 +1,5 @@
+It's a pet project to fix tags based on playlist file
+In this version it uses aimppl4 playlist format
+
+
+Based on Id3.Net repo https://github.com/JeevanJames/Id3 (has to be placed near this one)
